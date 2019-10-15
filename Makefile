@@ -35,19 +35,8 @@ define Package/dns2tcp/conffiles
 /etc/config/dns2tcp
 endef
 
-#CFLAGS += -I$(STAGING_DIR)/usr/include
-#LDFLAGS += -L$(STAGING_DIR)/usr/lib
-#MAKE_VARS += INCLUDES="-I$(STAGING_DIR)/usr/include"
-#MAKE_VARS += LDFLAGS="-L$(STAGING_DIR)/usr/lib"
 MAKE_FLAGS += INCLUDES="-I$(STAGING_DIR)/usr/include"
 MAKE_FLAGS += LDFLAGS="-L$(STAGING_DIR)/usr/lib"
-
-#CFLAGS += -I$(STAGING_DIR)/usr
-#LDFLAGS += -L$(STAGING_DIR)/usr
-#MAKE_VARS += INCLUDES="-I$(STAGING_DIR)/usr"
-#MAKE_VARS += LDFLAGS="-L$(STAGING_DIR)/usr"
-#MAKE_FLAGS += INCLUDES="-I$(STAGING_DIR)/usr"
-#MAKE_FLAGS += LDFLAGS="-L$(STAGING_DIR)/usr"
 
 define Package/dns2tcp/install
 	$(INSTALL_DIR) $(1)/usr/bin
