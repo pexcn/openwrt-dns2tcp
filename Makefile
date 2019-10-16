@@ -35,8 +35,9 @@ define Package/dns2tcp/conffiles
 /etc/config/dns2tcp
 endef
 
-MAKE_FLAGS += INCLUDES="-I$(STAGING_DIR)/usr/include"
-MAKE_FLAGS += LDFLAGS="-L$(STAGING_DIR)/usr/lib"
+#MAKE_FLAGS += INCLUDES="-I$(STAGING_DIR)/usr/include"
+#MAKE_FLAGS += LDFLAGS="-L$(STAGING_DIR)/usr/lib"
+MAKE_FLAGS += LIBS="-l:libuv_a.a"
 
 define Package/dns2tcp/install
 	$(INSTALL_DIR) $(1)/usr/bin
