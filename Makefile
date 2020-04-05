@@ -1,17 +1,16 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=dns2tcp
-PKG_VERSION:=1.0
+PKG_VERSION:=1.1.0
 PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/zfl9/dns2tcp.git
-PKG_SOURCE_VERSION:=d9ddb92bde1c5451f9deb3120ca7db7531d1b30b
+PKG_SOURCE_VERSION:=96aa2bddbb7bc7e263827cb5ebad5116697a000b
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION)
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)/$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION)
 
-PKG_BUILD_DEPENDS:=libuv
 PKG_BUILD_PARALLEL:=1
 PKG_USE_MIPS16:=0
 
@@ -35,10 +34,6 @@ endef
 define Package/dns2tcp/conffiles
 /etc/config/dns2tcp
 endef
-
-#MAKE_FLAGS += INCLUDES="-I$(STAGING_DIR)/usr/include"
-#MAKE_FLAGS += LDFLAGS="-L$(STAGING_DIR)/usr/lib"
-MAKE_FLAGS += LIBS="-l:libuv_a.a"
 
 define Package/dns2tcp/install
 	$(INSTALL_DIR) $(1)/usr/bin
