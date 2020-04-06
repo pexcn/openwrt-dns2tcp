@@ -46,8 +46,6 @@ start_dns2tcp() {
 	procd_set_param command /usr/bin/dns2tcp
 	append_param $1 local_address "-L"
 	append_param $1 remote_address "-R"
-	append_param $1 tcp_syncnt "-s"
-	append_bool $1 ipv6_only "-6"
 	append_bool $1 reuse_port "-r"
 	append_bool $1 tcp_quickack "-a"
 	append_bool $1 tcp_fastopen "-f"
